@@ -32,7 +32,7 @@ public class UsuarioController {
 
     @GetMapping("/find/{id}")
     public ResponseEntity<?> findById(@PathVariable long id) {
-        Usuario usuario = usuarioService.find2(id);
+        Usuario usuario = usuarioService.find(id);
         return new ResponseEntity<>(
                 usuario,
                 null,

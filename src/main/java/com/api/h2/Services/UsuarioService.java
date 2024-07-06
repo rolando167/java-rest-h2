@@ -28,17 +28,13 @@ public class UsuarioService {
     public Usuario find(Long id) {
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         if (usuario.isPresent()) {
-            Optional<Cliente> cliente = clienteRepository.findById(id);
-
-            if (cliente.isPresent()) {
-                usuario.get().setCliente(cliente.get());
-            }
             return usuario.get();
         }
         return new Usuario();
     }
 
     public Usuario find2(Long id) {
+        //Unidireccional
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         if (usuario.isPresent()) {
             Optional<Cliente> cliente = clienteRepository.findById(id);
