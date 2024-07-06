@@ -19,16 +19,16 @@ public class UsuarioService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public List<Usuario> getAll(){
+    public List<Usuario> getAll() {
         return usuarioRepository.findAll();
     }
 
-    public Usuario find(Long id){
+    public Usuario find(Long id) {
         Optional<Usuario> usuario = usuarioRepository.findById(id);
-        if(usuario.isPresent()){
+        if (usuario.isPresent()) {
             Optional<Cliente> cliente = clienteRepository.findById(id);
 
-            if(cliente.isPresent()){
+            if (cliente.isPresent()) {
                 usuario.get().setCliente(cliente.get());
             }
             return usuario.get();
@@ -36,15 +36,15 @@ public class UsuarioService {
         return new Usuario();
     }
 
-    public Usuario save(Usuario usuario){
+    public Usuario save(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario saveUserClient(Usuario usuario){
+    public Usuario saveUserClient(Usuario usuario) {
 
         Cliente cliente = new Cliente();
         cliente.setName(usuario.getName());
-        cliente.setLast_name("last "+ usuario.getName());
+        cliente.setLast_name("last " + usuario.getName());
         usuario.setCliente(cliente);
 
         return usuarioRepository.save(usuario);

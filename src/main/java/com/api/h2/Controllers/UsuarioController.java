@@ -1,6 +1,5 @@
 package com.api.h2.Controllers;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.h2.Entities.Pedido;
 import com.api.h2.Entities.Usuario;
 import com.api.h2.Services.UsuarioService;
 
