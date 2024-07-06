@@ -1,0 +1,24 @@
+{
+    "material-icon-theme.files.associations": {
+        "*.routes.ts": "Routing",
+        // "**.json": "json",
+        // "fileName.ts": "angular"
+
+    },
+    "material-icon-theme.files.customClones": [
+
+    ],
+    "material-icon-theme.folders.associations": {
+        "repositories": "scala",
+        "Entities": "vm",
+        "Dtos": "Lua",
+        "Dto": "Lua",
+        "main": "java",
+    },
+    "material-icon-theme.folders.customClones": [
+
+    ],
+    "material-icon-theme.languages.associations": {
+
+    }
+}
