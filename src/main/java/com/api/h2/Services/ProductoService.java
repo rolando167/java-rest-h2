@@ -22,14 +22,19 @@ public class ProductoService {
 
     public Producto find(Long id) {
         Optional<Producto> producto = productoRepository.findById(id);
-        if(producto.isPresent()){
+        if (producto.isPresent()) {
             return producto.get();
         }
         return new Producto();
     }
 
     public Producto save(Producto producto) {
-
+        // Funciona al 99%
+        /*
+         * select * from ventas
+         * select * from ventas_productos
+         * select * from productos
+         */
         // ventas
         Venta venta1 = new Venta();
         venta1.setDescription("Juan Perez");
@@ -41,7 +46,7 @@ public class ProductoService {
 
         Venta venta3 = new Venta();
         venta3.setDescription("Arturo Martinez");
-        venta2.setFecha_pedido(LocalDateTime.now());
+        venta3.setFecha_pedido(LocalDateTime.now());
 
         // Productos
         Producto producto1 = new Producto();

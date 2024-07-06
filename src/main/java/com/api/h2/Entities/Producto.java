@@ -2,12 +2,15 @@ package com.api.h2.Entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -27,8 +30,9 @@ public class Producto {
     @Column(name = "published")
 	private boolean published;
 
-    @ManyToMany(mappedBy = "productos")
-    //@JoinTable(name = "pedidos_productos2", joinColumns = @JoinColumn(name = "club"), inverseJoinColumns = @JoinColumn(name = "competition"))
+    // ### Many to Many
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "ventas_productos", joinColumns = @JoinColumn(name = "producto_id"), inverseJoinColumns = @JoinColumn(name = "venta_id"))
     private List<Venta> ventas;
 
     public Producto() {
