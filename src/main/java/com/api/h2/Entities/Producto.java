@@ -7,8 +7,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
@@ -30,7 +28,7 @@ public class Producto {
 
     @ManyToMany(mappedBy = "productos", fetch = FetchType.LAZY)
     //@JoinTable(name = "pedidos_productos2", joinColumns = @JoinColumn(name = "club"), inverseJoinColumns = @JoinColumn(name = "competition"))
-    private List<Pedido> pedidos;
+    private List<Venta> ventas;
 
     public Producto() {
     }
@@ -68,12 +66,12 @@ public class Producto {
         this.published = published;
     }
 
-    public List<Pedido> getPedidos() {
-        return pedidos;
+    public List<Venta> getPedidos() {
+        return ventas;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
+    public void setPedidos(List<Venta> ventas) {
+        this.ventas = ventas;
     }
 
 }

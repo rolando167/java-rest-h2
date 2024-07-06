@@ -17,7 +17,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="pedidos")
+@Table(name = "pedidos")
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,20 +29,17 @@ public class Pedido {
     @Column
     private LocalDateTime fecha_pedido;
 
-    // @ManyToOne(fetch = FetchType.LAZY, optional = true) //varios pedidos pertenecen a un cliente
+    // @ManyToOne(fetch = FetchType.LAZY, optional = true) //varios pedidos
+    // pertenecen a un cliente
     // @JoinColumn(name = "cliente_id", nullable = false)
     // @OnDelete(action = OnDeleteAction.CASCADE)
     // @JsonIgnore
     // private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false, updatable = false , referencedColumnName = "id" )
+    @JoinColumn(name = "cliente_id", nullable = false, updatable = false, referencedColumnName = "id")
     @JsonIgnore
     private Cliente cliente;
-
-    // ### Many to Many
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Producto> productos;
 
     public Pedido() {
     }
@@ -79,11 +76,4 @@ public class Pedido {
         this.description = description;
     }
 
-    public List<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
 }
