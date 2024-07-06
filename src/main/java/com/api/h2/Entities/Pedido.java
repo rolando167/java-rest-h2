@@ -37,7 +37,7 @@ public class Pedido {
     // private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false, updatable = false)
+    @JoinColumn(name = "cliente_id", nullable = false, updatable = false , referencedColumnName = "id" )
     @JsonIgnore
     private Cliente cliente;
 
