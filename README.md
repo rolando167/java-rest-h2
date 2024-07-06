@@ -78,7 +78,10 @@ Please make sure to update tests as appropriate.
  * https://www.baeldung.com/spring-data-jpa-delete
  * https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/
  * https://adictosaltrabajo.com/2020/04/02/hibernate-onetoone-onetomany-manytoone-y-manytomany/
+ * https://stackoverflow.com/questions/15359306/how-to-fetch-fetchtype-lazy-associations-with-jpa-and-hibernate-in-a-spring-cont
+ * https://www.baeldung.com/spring-data-jpa-refresh-fetch-entity-after-save
  * 
+
 
 ```
 
