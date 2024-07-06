@@ -1,8 +1,7 @@
 package com.api.h2.Controllers;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -56,7 +55,7 @@ public class PedidoController {
     public ResponseEntity<Pedido> create(@PathVariable(value = "cliente_id") Long cliente_id,
             @RequestBody Pedido pedido) {
         // guardar many to one
-        pedido.setFecha_pedido(LocalDate.now());
+        pedido.setFecha_pedido(LocalDateTime.now());
         Pedido pedidosaved = pedidoService.save(cliente_id, pedido);
 
         return new ResponseEntity<>(

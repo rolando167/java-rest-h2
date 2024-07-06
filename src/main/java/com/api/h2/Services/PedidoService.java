@@ -1,6 +1,6 @@
 package com.api.h2.Services;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +34,7 @@ public class PedidoService {
             Pedido ped = pedido.get();
             Optional<Cliente> cliente = clienteRepository.findById(ped.getCliente().getId());
             pedidosDto.setDescription(ped.getDescription());
-            pedidosDto.setFecha_pedido(LocalDate.now());
+            pedidosDto.setFecha_pedido(LocalDateTime.now());
             if (cliente.isPresent()) {
                 Cliente cli = cliente.get();
                 ClienteDto clienteDto = new ClienteDto();
@@ -66,7 +66,7 @@ public class PedidoService {
         if(pedidoNew.isPresent()){
             Pedido pedidoUpd = pedidoNew.get();
             pedidoUpd.setDescription(pedido.getDescription());
-            pedidoUpd.setFecha_pedido(LocalDate.now());
+            pedidoUpd.setFecha_pedido(LocalDateTime.now());
             pedidoRepository.save(pedidoUpd);
             return pedidoUpd;
         }

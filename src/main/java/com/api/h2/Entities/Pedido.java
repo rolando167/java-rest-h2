@@ -1,6 +1,7 @@
 package com.api.h2.Entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -28,7 +29,7 @@ public class Pedido {
     private String description;
 
     @Column
-    private LocalDate fecha_pedido;
+    private LocalDateTime fecha_pedido;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true) //varios pedidos pertenecen a un cliente
     @JoinColumn(name = "cliente_id", nullable = false)
@@ -55,11 +56,11 @@ public class Pedido {
         this.id = id;
     }
 
-    public LocalDate getFecha_pedido() {
+    public LocalDateTime getFecha_pedido() {
         return fecha_pedido;
     }
 
-    public void setFecha_pedido(LocalDate fecha_pedido) {
+    public void setFecha_pedido(LocalDateTime fecha_pedido) {
         this.fecha_pedido = fecha_pedido;
     }
 

@@ -1,6 +1,6 @@
 package com.api.h2.Dtos;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PedidosDto {
     private String description;
-    private LocalDate fecha_pedido;
+    private LocalDateTime fecha_pedido;
     private ClienteDto cliente;
 }
