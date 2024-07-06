@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -38,9 +39,9 @@ public class Cliente {
     private List<Pedido> pedidos;
 
     //#### OneToOne: Que columna en la tabla Tuition tiene la FK
-    @JoinColumn(name = "usuario_id")
-    @OneToOne(fetch = FetchType.LAZY)
-    //@OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn( name = "usuario_id", referencedColumnName = "id" )
+    @JsonIgnore
     private Usuario usuario;
 
     @CreationTimestamp
@@ -73,6 +74,14 @@ public class Cliente {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override

@@ -19,6 +19,10 @@
  * ✔ One to Many
  * ✔ Many to Many
  * ✔ Iconos folder personalizados .vscode - settings
+ * ✔ Random number
+ * ✔ Unidireccional de un lado al otro y nada mas
+ * ✔ Bidireccional: de un lado al otro y vicervesa
+
 
 
 ## 🌐 Installation
@@ -82,7 +86,10 @@ Please make sure to update tests as appropriate.
  * https://stackoverflow.com/questions/15359306/how-to-fetch-fetchtype-lazy-associations-with-jpa-and-hibernate-in-a-spring-cont
  * https://www.baeldung.com/spring-data-jpa-refresh-fetch-entity-after-save
  * 
-
+ * YT - Dominando las Relaciones en JPA con Spring Boot: Simplificando tus conexiones a bases de datos
+ * https://github.com/UnProgramadorNaceOfficial/JPA-relations
+ * https://stackoverflow.com/questions/25112962/jpa-how-to-save-two-entities-that-have-one-to-one-relation
+* https://medium.com/@bectorhimanshu/spring-data-jpa-one-to-oneunidirectional-relationship-0c6199bc6e8a
 
 ```
 

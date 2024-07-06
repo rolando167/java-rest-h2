@@ -26,7 +26,7 @@ public class Usuario {
     @Column(name = "status")
     private Integer status;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "usuario")
     private Cliente cliente;
 
     public Usuario() {
