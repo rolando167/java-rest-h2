@@ -12,7 +12,13 @@
 
 ## 📌 Feactures
 
- * ✔ One
+ * ✔ Jpa
+ * ✔ Dto
+ * ✔ H2
+ * ✔ One to One
+ * ✔ One to Many
+ * ✔ Many to Many
+
 
 ## 🌐 Installation
 
