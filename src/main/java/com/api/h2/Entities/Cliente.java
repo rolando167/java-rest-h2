@@ -40,6 +40,7 @@ public class Cliente {
     //#### OneToOne: Que columna en la tabla Tuition tiene la FK
     @JoinColumn(name = "usuario_id")
     @OneToOne(fetch = FetchType.LAZY)
+    //@OneToOne(fetch = FetchType.EAGER)
     private Usuario usuario;
 
     @CreationTimestamp
