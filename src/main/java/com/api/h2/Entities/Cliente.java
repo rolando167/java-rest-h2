@@ -32,6 +32,14 @@ public class Cliente {
     @Column(name = "last_name")
     private String last_name;
 
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
+
     //#### OneToMany: un Cliente tiene varios pedidos
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Pedido> pedidos;
@@ -41,14 +49,6 @@ public class Cliente {
     @JoinColumn( name = "usuario_id", referencedColumnName = "id" )
     @JsonIgnore
     private Usuario usuario;
-
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
 
     public long getId() {
         return id;
