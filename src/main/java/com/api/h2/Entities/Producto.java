@@ -1,4 +1,5 @@
 package com.api.h2.Entities;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -26,11 +27,18 @@ public class Producto {
     @Column(name = "published")
 	private boolean published;
 
-    @ManyToMany(mappedBy = "productos", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "productos")
     //@JoinTable(name = "pedidos_productos2", joinColumns = @JoinColumn(name = "club"), inverseJoinColumns = @JoinColumn(name = "competition"))
     private List<Venta> ventas;
 
     public Producto() {
+    }
+
+    public void addVenta(Venta venta){
+        if(this.ventas == null){
+            this.ventas = new ArrayList<>();
+        }
+        this.ventas.add(venta);
     }
 
     public long getId() {
@@ -66,12 +74,11 @@ public class Producto {
         this.published = published;
     }
 
-    public List<Venta> getPedidos() {
+    public List<Venta> getVentas() {
         return ventas;
     }
 
-    public void setPedidos(List<Venta> ventas) {
+    public void setVentas(List<Venta> ventas) {
         this.ventas = ventas;
     }
-
 }
