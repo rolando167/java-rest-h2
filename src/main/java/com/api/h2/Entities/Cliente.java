@@ -15,7 +15,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -30,10 +32,15 @@ public class Cliente {
     @Column(name = "last_name")
     private String last_name;
 
-    //un Cliente tiene varios pedidos
+    //#### OneToMany: un Cliente tiene varios pedidos
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private List<Pedido> pedidos;
+
+    //#### OneToOne: Que columna en la tabla Tuition tiene la FK
+    @JoinColumn(name = "usuario_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    private Usuario usuario;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)

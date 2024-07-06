@@ -77,6 +77,7 @@ Please make sure to update tests as appropriate.
  * https://github.com/bezkoder/spring-boot-one-to-many
  * https://www.baeldung.com/spring-data-jpa-delete
  * https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/
+ * https://adictosaltrabajo.com/2020/04/02/hibernate-onetoone-onetomany-manytoone-y-manytomany/
  * 
 
 ```
