@@ -92,6 +92,8 @@ Please make sure to update tests as appropriate.
 * https://medium.com/@bectorhimanshu/spring-data-jpa-one-to-oneunidirectional-relationship-0c6199bc6e8a
 * https://www.baeldung.com/jpa-one-to-one
 * https://www.baeldung.com/jpa-many-to-many
+* https://medium.com/@arijit83work/manytomany-relationship-in-spring-boot-with-hibernate-and-jpa-35d7b4fdf3bf
+* https://www.oscarblancarteblog.com/2018/12/27/relaciones-manytomany/
 * 
 
 ```
