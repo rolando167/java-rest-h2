@@ -20,8 +20,12 @@ public class ProductoService {
         return productoRepository.findAll();
     }
 
-    public Optional<Producto> find(Long id) {
-        return productoRepository.findById(id);
+    public Producto find(Long id) {
+        Optional<Producto> producto = productoRepository.findById(id);
+        if(producto.isPresent()){
+            return producto.get();
+        }
+        return new Producto();
     }
 
     public Producto save(Producto producto) {
