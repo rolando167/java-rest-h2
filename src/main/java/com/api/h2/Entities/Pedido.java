@@ -30,9 +30,14 @@ public class Pedido {
     @Column
     private LocalDateTime fecha_pedido;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true) //varios pedidos pertenecen a un cliente
-    @JoinColumn(name = "cliente_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    // @ManyToOne(fetch = FetchType.LAZY, optional = true) //varios pedidos pertenecen a un cliente
+    // @JoinColumn(name = "cliente_id", nullable = false)
+    // @OnDelete(action = OnDeleteAction.CASCADE)
+    // @JsonIgnore
+    // private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false, updatable = false)
     @JsonIgnore
     private Cliente cliente;
 

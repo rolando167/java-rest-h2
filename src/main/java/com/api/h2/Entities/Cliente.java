@@ -33,8 +33,7 @@ public class Cliente {
     private String last_name;
 
     //#### OneToMany: un Cliente tiene varios pedidos
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Pedido> pedidos;
 
     //#### OneToOne: Que columna en la tabla Tuition tiene la FK
@@ -82,5 +81,15 @@ public class Cliente {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    
 
 }
