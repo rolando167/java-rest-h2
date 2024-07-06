@@ -1,6 +1,5 @@
 package com.api.h2.Entities;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.OnDelete;
