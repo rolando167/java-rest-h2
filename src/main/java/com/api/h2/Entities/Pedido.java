@@ -1,15 +1,18 @@
 package com.api.h2.Entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -36,6 +39,10 @@ public class Pedido {
     @JoinColumn(name = "cliente_id", nullable = false, updatable = false , referencedColumnName = "id" )
     @JsonIgnore
     private Cliente cliente;
+
+    // ### Many to Many
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Producto> productos;
 
     public Pedido() {
     }
@@ -70,5 +77,13 @@ public class Pedido {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 }

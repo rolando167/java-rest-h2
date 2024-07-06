@@ -91,6 +91,9 @@ Please make sure to update tests as appropriate.
  * https://stackoverflow.com/questions/25112962/jpa-how-to-save-two-entities-that-have-one-to-one-relation
 * https://medium.com/@bectorhimanshu/spring-data-jpa-one-to-oneunidirectional-relationship-0c6199bc6e8a
 * https://www.baeldung.com/jpa-one-to-one
+* https://www.baeldung.com/jpa-many-to-many
+* 
+
 ```
 
 ## License
