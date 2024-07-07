@@ -24,7 +24,7 @@
  * ✔ Bidireccional: de un lado al otro y vicervesa
  * ✔ @Query(value = "select * from ..." ) repository Product
  * ✔ @RequestParam(name = "nombre") String productName - ?nombre=Queso&marca=Nestle
- * ✔
+ * ✔ yml - solo template
 
 
 
