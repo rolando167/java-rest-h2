@@ -103,6 +103,9 @@ Please make sure to update tests as appropriate.
 * https://github.com/UnProgramadorNaceOfficial/JPA-relations
 * https://github.com/latecnologiaavanza/ejemplos-relaciones-api-rest
 ** ----
+* https://spring.io/guides/gs/testing-web
+* https://ranjeetborate.medium.com/mastering-junit-testing-for-rest-controllers-458d9629bf31
+* 
 ```
 
 ## License

@@ -70,4 +70,8 @@ public class ProductoService {
 
         return productoRepository.listarProductoNombre(nombre);
     }
+
+    public String greet() {
+        return "Hello, World";
+    }
 }
