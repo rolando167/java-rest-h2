@@ -89,20 +89,22 @@ Please make sure to update tests as appropriate.
  * https://adictosaltrabajo.com/2020/04/02/hibernate-onetoone-onetomany-manytoone-y-manytomany/
  * https://stackoverflow.com/questions/15359306/how-to-fetch-fetchtype-lazy-associations-with-jpa-and-hibernate-in-a-spring-cont
  * https://www.baeldung.com/spring-data-jpa-refresh-fetch-entity-after-save
- * 
+** ----
  * YT - Dominando las Relaciones en JPA con Spring Boot: Simplificando tus conexiones a bases de datos
- * https://github.com/UnProgramadorNaceOfficial/JPA-relations
  * https://stackoverflow.com/questions/25112962/jpa-how-to-save-two-entities-that-have-one-to-one-relation
 * https://medium.com/@bectorhimanshu/spring-data-jpa-one-to-oneunidirectional-relationship-0c6199bc6e8a
 * https://www.baeldung.com/jpa-one-to-one
 * https://www.baeldung.com/jpa-many-to-many
 * https://medium.com/@arijit83work/manytomany-relationship-in-spring-boot-with-hibernate-and-jpa-35d7b4fdf3bf
 * https://www.oscarblancarteblog.com/2018/12/27/relaciones-manytomany/
-* 
+** ----
 * https://www.baeldung.com/spring-request-param
 * https://www.baeldung.com/jpa-query-parameters
+** ----
 * https://github.com/jorgejacinto9701/DAWI-Sesion06Finalizado
-
+* https://github.com/Jose-Santillano/hotel-api-spring
+* https://github.com/UnProgramadorNaceOfficial/JPA-relations
+** ----
 ```
 
 ## License
