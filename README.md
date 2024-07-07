@@ -25,6 +25,7 @@
  * ✔ @Query(value = "select * from ..." ) repository Product
  * ✔ @RequestParam(name = "nombre") String productName - ?nombre=Queso&marca=Nestle
  * ✔ yml - solo template
+ * ✔ Mock - junit - test basico
 
 ## 🌐 Installation
 
