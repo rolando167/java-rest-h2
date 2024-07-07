@@ -104,6 +104,7 @@ Please make sure to update tests as appropriate.
 * https://github.com/jorgejacinto9701/DAWI-Sesion06Finalizado
 * https://github.com/Jose-Santillano/hotel-api-spring
 * https://github.com/UnProgramadorNaceOfficial/JPA-relations
+* https://github.com/latecnologiaavanza/ejemplos-relaciones-api-rest
 ** ----
 ```
 
