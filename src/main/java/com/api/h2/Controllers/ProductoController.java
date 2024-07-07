@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.h2.Entities.Producto;
@@ -35,7 +36,28 @@ public class ProductoController {
     public ResponseEntity<?> findById(@PathVariable Long id) {
         Producto producto = productoService.find(id);
         return new ResponseEntity<>(
-                 producto,
+                producto,
+                null,
+                HttpStatus.OK);
+    }
+
+    @GetMapping("/findnombre1/{nombre}")
+    public ResponseEntity<?> findByNombre1(@PathVariable String productName) {
+        List<Producto> productos = productoService.buscarPorNombre(productName);
+        return new ResponseEntity<>(
+                productos,
+                null,
+                HttpStatus.OK);
+    }
+
+    @GetMapping("/findnombre2")
+    public ResponseEntity<?> findByNombre2(@RequestParam(name = "nombre") String productName) {
+        // http://localhost:8080/api/producto/findnombre2?nombre=Queso
+        // http://localhost:8080/api/producto/findnombre2?nombre=Queso&marca=Nestle
+        List<Producto> productos = productoService.buscarPorNombre(productName);
+
+        return new ResponseEntity<>(
+                productos,
                 null,
                 HttpStatus.OK);
     }

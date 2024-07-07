@@ -22,6 +22,10 @@
  * ✔ Random number
  * ✔ Unidireccional de un lado al otro y nada mas
  * ✔ Bidireccional: de un lado al otro y vicervesa
+ * ✔ @Query(value = "select * from ..." ) repository Product
+ * ✔ @RequestParam(name = "nombre") String productName - ?nombre=Queso&marca=Nestle
+ * ✔
+
 
 
 
@@ -94,6 +98,9 @@ Please make sure to update tests as appropriate.
 * https://www.baeldung.com/jpa-many-to-many
 * https://medium.com/@arijit83work/manytomany-relationship-in-spring-boot-with-hibernate-and-jpa-35d7b4fdf3bf
 * https://www.oscarblancarteblog.com/2018/12/27/relaciones-manytomany/
+* 
+* https://www.baeldung.com/spring-request-param
+* https://www.baeldung.com/jpa-query-parameters
 * 
 
 ```

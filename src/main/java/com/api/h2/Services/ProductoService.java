@@ -51,16 +51,23 @@ public class ProductoService {
         // Productos
         Producto producto1 = new Producto();
         producto1.setName("Cafe simple");
+        producto1.setPrice(1.5);
         producto1.addVenta(venta1);
         producto1.addVenta(venta2);
         producto1.addVenta(venta3);
 
         Producto producto2 = new Producto();
         producto2.setName("Queso pasado");
+        producto1.setPrice(6D);
         producto2.addVenta(venta1);
         producto2.addVenta(venta2);
         producto2.addVenta(venta3);
 
         return productoRepository.save(producto1);
+    }
+
+    public List<Producto> buscarPorNombre(final String nombre) {
+
+        return productoRepository.listarProductoNombre(nombre);
     }
 }
