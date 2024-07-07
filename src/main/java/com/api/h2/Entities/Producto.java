@@ -37,6 +37,12 @@ public class Producto {
     public Producto() {
     }
 
+    public Producto(String name, Double price, Integer stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public void addVenta(Venta venta){
         if(this.ventas == null){
             this.ventas = new ArrayList<>();
