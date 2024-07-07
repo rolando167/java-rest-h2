@@ -2,9 +2,9 @@
 
 # 💻 💎 Api-Rest-JPA-H2 -
 
-> 3 entidades, muchos a muchos, uno a muchos, y uno a uno
+> 4 entidades, muchos a muchos, uno a muchos, y uno a uno
 
->Cliente, Pedidos y Productos
+>Cliente, Pedidos, Productos y Ventas
 
 >Un cliente tiene muchos Pedidos(fk_cliente), muchos Pedidos pertenecen a un Cliente.
 
