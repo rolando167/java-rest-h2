@@ -81,7 +81,6 @@ Please make sure to update tests as appropriate.
  * https://www.arquitecturajava.com/spring-boot-rest-jpa-y-json/
  * https://www.bezkoder.com/spring-boot-jpa-crud-rest-api/
  * https://www.bezkoder.com/jpa-manytoone/
- * https://github.com/bezkoder/spring-boot-one-to-many
  * https://www.baeldung.com/spring-data-jpa-delete
  * https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/
  * https://adictosaltrabajo.com/2020/04/02/hibernate-onetoone-onetomany-manytoone-y-manytomany/
@@ -103,6 +102,7 @@ Please make sure to update tests as appropriate.
 * https://github.com/Jose-Santillano/hotel-api-spring
 * https://github.com/UnProgramadorNaceOfficial/JPA-relations
 * https://github.com/latecnologiaavanza/ejemplos-relaciones-api-rest
+* https://github.com/bezkoder/spring-boot-one-to-many
 ** ----
 * https://spring.io/guides/gs/testing-web
 * https://ranjeetborate.medium.com/mastering-junit-testing-for-rest-controllers-458d9629bf31
