@@ -49,6 +49,11 @@ public class ClienteService {
         return clienteRepository.getCantidad();
     }
 
+    public List<Object[]> getListObjet() {
+        return clienteRepository.getListObjet();
+    }
+
+
     public Cliente update(Cliente cliente, Long id) {
         Optional<Cliente> clientefind = clienteRepository.findById(id);
         if (clientefind.isPresent()) {

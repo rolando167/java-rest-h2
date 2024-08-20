@@ -8,20 +8,22 @@ import org.springframework.data.repository.query.Param;
 
 import com.api.h2.Entities.Cliente;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long>{
+public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query(value = "EXEC REPORTS.SP_listarUsers", nativeQuery = true)
     List<Cliente> listarPedidos(@Param("page_id") Long page_id);
 
-    @Query(value = "Select max(age) from clientes" , nativeQuery = true)
+    @Query(value = "Select max(age) from clientes", nativeQuery = true)
     Long getMaxEdad();
 
-    @Query(value = "Select min(age) from clientes" , nativeQuery = true)
+    @Query(value = "Select min(age) from clientes", nativeQuery = true)
     Long getMinEdad();
 
-    @Query(value = "Select SUM(age) from clientes" , nativeQuery = true)
+    @Query(value = "Select SUM(age) from clientes", nativeQuery = true)
     Long getSumEdad();
 
-    @Query(value = "Select count(*) from clientes" , nativeQuery = true)
+    @Query(value = "Select count(*) from clientes", nativeQuery = true)
     Long getCantidad();
 
+    @Query(value = "Select name, age from clientes", nativeQuery = true)
+    List<Object[]> getListObjet();
 }
