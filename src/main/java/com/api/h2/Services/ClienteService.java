@@ -37,6 +37,10 @@ public class ClienteService {
         return clienteRepository.getMaxEdad();
     }
 
+    public Long minAge() {
+        return clienteRepository.getMinEdad();
+    }
+
     public Cliente update(Cliente cliente, Long id) {
         Optional<Cliente> clientefind = clienteRepository.findById(id);
         if (clientefind.isPresent()) {

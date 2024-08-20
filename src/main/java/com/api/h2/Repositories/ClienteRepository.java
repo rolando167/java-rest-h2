@@ -15,4 +15,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long>{
     @Query(value = "Select max(age) from clientes" , nativeQuery = true)
     Long getMaxEdad();
 
+    @Query(value = "Select min(age) from clientes" , nativeQuery = true)
+    Long getMinEdad();
+
 }

@@ -46,11 +46,22 @@ public class ClienteController {
     }
 
     @GetMapping("/max")
-    public ResponseEntity<?> maxAage() {
+    public ResponseEntity<?> maxAge() {
         Long maxAge = clienteService.maxAge();
 
         if (maxAge > 0) {
             return new ResponseEntity<>(maxAge, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/min")
+    public ResponseEntity<?> minAge() {
+        Long minAge = clienteService.minAge();
+
+        if (minAge > 0) {
+            return new ResponseEntity<>(minAge, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
