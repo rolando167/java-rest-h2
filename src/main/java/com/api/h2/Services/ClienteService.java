@@ -28,12 +28,20 @@ public class ClienteService {
     }
 
     public Cliente save(Cliente cliente) {
-        Random rand = new Random();
-        int max = 50;
-        int min = 20;
-        Integer rand_int1 = rand.nextInt(max - min + 1) + min;
-        cliente.setAge(rand_int1.longValue());
+        Integer rand_age = getNumberRandom(20, 50);
+        Integer rand_coche = getNumberRandom(1, 2);
+        cliente.setAge(rand_age.longValue());
+        if (rand_coche % 2 == 0) {
+            cliente.setCoche(true);
+        }else{
+            cliente.setCoche(false);
+        }
         return clienteRepository.save(cliente);
+    }
+
+    private int getNumberRandom(int min, int max) {
+        Random rand = new Random();
+        return rand.nextInt(max - min + 1) + min;
     }
 
     public Long maxAge() {

@@ -41,6 +41,9 @@ public class Cliente {
     @Column(name = "age")
     private Long age;
 
+    @Column(name = "coche")
+    private Boolean coche;
+
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -121,5 +124,13 @@ public class Cliente {
 
     public void setAge(Long age) {
         this.age = age;
+    }
+
+    public Boolean getCoche() {
+        return coche;
+    }
+
+    public void setCoche(Boolean coche) {
+        this.coche = coche;
     }
 }
