@@ -29,7 +29,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query(value = "Select name, age from clientes", nativeQuery = true)
     List<Object[]> getListObject();
 
-    @Query(value = "Select name, age, address as direccion, number_phone from clientes", nativeQuery = true)
+    @Query(value = "Select name, age, address as direccion, number_phone as phone from clientes", nativeQuery = true)
     List<ClienteView> getListView();
 
     @Query(value = "Select name, age, address as direccion, number_phone from clientes "

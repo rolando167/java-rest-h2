@@ -11,7 +11,7 @@ public interface ClienteView {
 
     String getDireccion();
 
-    @Column(name = "number_phone")
+    //@Column(name = "phone")
     @JsonProperty("numeroxD")
-    String getNumberPhone();
+    String getPhone();
 }
