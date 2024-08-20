@@ -3,6 +3,7 @@ package com.api.h2.Repositories;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -38,6 +39,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             , nativeQuery = true)
     List<ClienteView> getFindListView(@Param("idCliente") Long id);
 
-    // @Query(value = "Select name, age from clientes", nativeQuery = true)
-    // Page<Object[]> getPageObject();
+    @Query(value = "Select name, age from clientes", nativeQuery = true)
+    Page<Object[]> getPageObject( Pageable pageable);
 }

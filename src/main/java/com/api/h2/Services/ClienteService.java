@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.api.h2.Dtos.ClienteView;
@@ -60,6 +62,10 @@ public class ClienteService {
 
     public List<ClienteView> getFindListView(Long id) {
         return clienteRepository.getFindListView(id);
+    }
+
+    public Page<Object[]> getPageObject(Pageable pageable) {
+        return clienteRepository.getPageObject(pageable);
     }
 
     public Cliente update(Cliente cliente, Long id) {

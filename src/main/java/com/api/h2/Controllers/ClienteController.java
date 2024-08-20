@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -123,6 +125,19 @@ public class ClienteController {
         System.out.println("--------------------------");
         System.out.println(listObjects.stream());
         if (listObjects.size()> 0) {
+            return new ResponseEntity<>(listObjects, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/getPage")
+    public ResponseEntity<?> getPageObject(Pageable pageable) {
+       Page<Object[]> listObjects = clienteService.getPageObject(pageable);
+        System.out.println(listObjects);
+        System.out.println("--------------------------");
+        System.out.println(listObjects.stream());
+        if (!listObjects.isEmpty()) {
             return new ResponseEntity<>(listObjects, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
