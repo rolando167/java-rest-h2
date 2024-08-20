@@ -39,6 +39,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
             , nativeQuery = true)
     List<ClienteView> getFindListView(@Param("idCliente") Long id);
 
-    @Query(value = "Select name, age from clientes", nativeQuery = true)
+    @Query(value = "Select name, age, coche from clientes", nativeQuery = true)
     Page<Object[]> getPageObject( Pageable pageable);
 }
