@@ -11,4 +11,8 @@ import com.api.h2.Entities.Cliente;
 public interface ClienteRepository extends JpaRepository<Cliente, Long>{
     @Query(value = "EXEC REPORTS.SP_listarUsers", nativeQuery = true)
     List<Cliente> listarPedidos(@Param("page_id") Long page_id);
+
+    @Query(value = "Select max(age) from clientes" , nativeQuery = true)
+    Long getMaxEdad();
+
 }

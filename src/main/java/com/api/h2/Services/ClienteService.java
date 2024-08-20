@@ -33,6 +33,10 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    public Long maxAge() {
+        return clienteRepository.getMaxEdad();
+    }
+
     public Cliente update(Cliente cliente, Long id) {
         Optional<Cliente> clientefind = clienteRepository.findById(id);
         if (clientefind.isPresent()) {

@@ -45,6 +45,17 @@ public class ClienteController {
         }
     }
 
+    @GetMapping("/max")
+    public ResponseEntity<?> maxAage() {
+        Long maxAge = clienteService.maxAge();
+
+        if (maxAge > 0) {
+            return new ResponseEntity<>(maxAge, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping("create")
     public ResponseEntity<Cliente> create(@RequestBody Cliente cliente) {
         Cliente clientesaved = clienteService.save(cliente);
