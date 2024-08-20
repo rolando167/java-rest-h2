@@ -18,4 +18,10 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long>{
     @Query(value = "Select min(age) from clientes" , nativeQuery = true)
     Long getMinEdad();
 
+    @Query(value = "Select SUM(age) from clientes" , nativeQuery = true)
+    Long getSumEdad();
+
+    @Query(value = "Select count(*) from clientes" , nativeQuery = true)
+    Long getCantidad();
+
 }

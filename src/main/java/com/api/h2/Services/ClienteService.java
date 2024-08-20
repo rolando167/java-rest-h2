@@ -41,6 +41,14 @@ public class ClienteService {
         return clienteRepository.getMinEdad();
     }
 
+    public Long sumAge() {
+        return clienteRepository.getSumEdad();
+    }
+
+    public Long cantidad() {
+        return clienteRepository.getCantidad();
+    }
+
     public Cliente update(Cliente cliente, Long id) {
         Optional<Cliente> clientefind = clienteRepository.findById(id);
         if (clientefind.isPresent()) {

@@ -67,6 +67,28 @@ public class ClienteController {
         }
     }
 
+    @GetMapping("/sum")
+    public ResponseEntity<?> sumAge() {
+        Long sumAge = clienteService.sumAge();
+
+        if (sumAge > 0) {
+            return new ResponseEntity<>(sumAge, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<?> count() {
+        Long total = clienteService.cantidad();
+
+        if (total > 0) {
+            return new ResponseEntity<>(total, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping("create")
     public ResponseEntity<Cliente> create(@RequestBody Cliente cliente) {
         Cliente clientesaved = clienteService.save(cliente);
