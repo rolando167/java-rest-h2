@@ -10,6 +10,8 @@
 
 >Muchos pedidos tienen muchos Productos
 
+> Revisar el "Java-H2.postman_collection.json" en raiz para pruebas potsman
+
 ## 📌 Feactures
 
  * ✔ Jpa
@@ -26,6 +28,7 @@
  * ✔ @RequestParam(name = "nombre") String productName - ?nombre=Queso&marca=Nestle
  * ✔ yml - solo template
  * ✔ Mock - junit - test basico
+ * ✔ Java-H2.postman_collection.json
 
 ## 🌐 Installation
 

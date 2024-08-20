@@ -32,6 +32,15 @@ public class Cliente {
     @Column(name = "last_name")
     private String last_name;
 
+    @Column(name = "number_phone")
+    private String number_phone;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "age")
+    private Long age;
+
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -40,13 +49,13 @@ public class Cliente {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    //#### OneToMany: un Cliente tiene varios pedidos
+    // #### OneToMany: un Cliente tiene varios pedidos
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Pedido> pedidos;
 
-    //#### OneToOne: Que columna en la tabla Tuition tiene la FK
+    // #### OneToOne: Que columna en la tabla Tuition tiene la FK
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn( name = "usuario_id", referencedColumnName = "id" )
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @JsonIgnore
     private Usuario usuario;
 
@@ -90,6 +99,27 @@ public class Cliente {
         this.pedidos = pedidos;
     }
 
-    
+    public String getNumber_phone() {
+        return number_phone;
+    }
 
+    public void setNumber_phone(String number_phone) {
+        this.number_phone = number_phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Long getAge() {
+        return age;
+    }
+
+    public void setAge(Long age) {
+        this.age = age;
+    }
 }
