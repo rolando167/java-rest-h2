@@ -7,7 +7,6 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.api.h2.Dtos.ClienteDto;
 import com.api.h2.Dtos.ClienteView;
 import com.api.h2.Entities.Cliente;
 import com.api.h2.Repositories.ClienteRepository;

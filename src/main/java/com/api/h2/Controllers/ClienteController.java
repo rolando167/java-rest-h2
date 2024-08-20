@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.h2.Dtos.ClienteDto;
 import com.api.h2.Dtos.ClienteView;
 import com.api.h2.Entities.Cliente;
 import com.api.h2.Services.ClienteService;
