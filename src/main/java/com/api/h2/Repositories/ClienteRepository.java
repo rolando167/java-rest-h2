@@ -2,6 +2,7 @@ package com.api.h2.Repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -27,13 +28,16 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     Long getCantidad();
 
     @Query(value = "Select name, age from clientes", nativeQuery = true)
-    List<Object[]> getListObjet();
+    List<Object[]> getListObject();
 
     @Query(value = "Select name, age, address as direccion, number_phone from clientes", nativeQuery = true)
     List<ClienteView> getListView();
 
-
-    @Query(value = "Select name, age, address as direccion, number_phone from clientes where id = :idCliente"
+    @Query(value = "Select name, age, address as direccion, number_phone from clientes "
+            + "where id = :idCliente"
     , nativeQuery = true)
     List<ClienteView> getFindListView(@Param("idCliente") Long id);
+
+    @Query(value = "Select name, age from clientes", nativeQuery = true)
+    Page<Object[]> getPageObject();
 }

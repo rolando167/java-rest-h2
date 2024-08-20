@@ -52,7 +52,7 @@ public class ClienteService {
     }
 
     public List<Object[]> getListObjet() {
-        return clienteRepository.getListObjet();
+        return clienteRepository.getListObject();
     }
 
     public List<ClienteView> getListView() {
