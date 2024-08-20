@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ClienteDto {
     private String name;
+    private String age;
 }

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.h2.Dtos.ClienteDto;
+import com.api.h2.Dtos.ClienteView;
 import com.api.h2.Entities.Cliente;
 import com.api.h2.Services.ClienteService;
 
@@ -92,6 +94,19 @@ public class ClienteController {
     @GetMapping("/getListObjet")
     public ResponseEntity<?> getListObjet() {
         List<Object[]> listObjects = clienteService.getListObjet();
+        System.out.println(listObjects);
+        System.out.println("--------------------------");
+        System.out.println(listObjects.stream());
+        if (listObjects.size()> 0) {
+            return new ResponseEntity<>(listObjects, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/getListView")
+    public ResponseEntity<?> getListView() {
+       List<ClienteView> listObjects = clienteService.getListView();
         System.out.println(listObjects);
         System.out.println("--------------------------");
         System.out.println(listObjects.stream());

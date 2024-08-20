@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.api.h2.Dtos.ClienteDto;
+import com.api.h2.Dtos.ClienteView;
 import com.api.h2.Entities.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
@@ -26,4 +28,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     @Query(value = "Select name, age from clientes", nativeQuery = true)
     List<Object[]> getListObjet();
+
+    @Query(value = "Select name, age, address as direccion, number_phone from clientes", nativeQuery = true)
+    List<ClienteView> getListView();
 }

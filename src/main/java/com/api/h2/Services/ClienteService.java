@@ -7,6 +7,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.api.h2.Dtos.ClienteDto;
+import com.api.h2.Dtos.ClienteView;
 import com.api.h2.Entities.Cliente;
 import com.api.h2.Repositories.ClienteRepository;
 
@@ -53,6 +55,9 @@ public class ClienteService {
         return clienteRepository.getListObjet();
     }
 
+    public List<ClienteView> getListView() {
+        return clienteRepository.getListView();
+    }
 
     public Cliente update(Cliente cliente, Long id) {
         Optional<Cliente> clientefind = clienteRepository.findById(id);
