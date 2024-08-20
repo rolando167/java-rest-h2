@@ -31,4 +31,9 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     @Query(value = "Select name, age, address as direccion, number_phone from clientes", nativeQuery = true)
     List<ClienteView> getListView();
+
+
+    @Query(value = "Select name, age, address as direccion, number_phone from clientes where id = :idCliente"
+    , nativeQuery = true)
+    List<ClienteView> getFindListView(@Param("idCliente") Long id);
 }

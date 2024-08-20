@@ -59,6 +59,10 @@ public class ClienteService {
         return clienteRepository.getListView();
     }
 
+    public List<ClienteView> getFindListView(Long id) {
+        return clienteRepository.getFindListView(id);
+    }
+
     public Cliente update(Cliente cliente, Long id) {
         Optional<Cliente> clientefind = clienteRepository.findById(id);
         if (clientefind.isPresent()) {

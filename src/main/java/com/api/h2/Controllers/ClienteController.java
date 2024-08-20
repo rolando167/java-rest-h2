@@ -117,6 +117,19 @@ public class ClienteController {
         }
     }
 
+    @GetMapping("/getFindListView/{id}")
+    public ResponseEntity<?> getFindListView(@PathVariable Long id) {
+       List<ClienteView> listObjects = clienteService.getFindListView(id);
+        System.out.println(listObjects);
+        System.out.println("--------------------------");
+        System.out.println(listObjects.stream());
+        if (listObjects.size()> 0) {
+            return new ResponseEntity<>(listObjects, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping("create")
     public ResponseEntity<Cliente> create(@RequestBody Cliente cliente) {
         Cliente clientesaved = clienteService.save(cliente);
