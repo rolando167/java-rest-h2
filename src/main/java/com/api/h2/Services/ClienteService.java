@@ -33,7 +33,7 @@ public class ClienteService {
         cliente.setAge(rand_age.longValue());
         if (rand_coche % 2 == 0) {
             cliente.setCoche(true);
-        }else{
+        } else {
             cliente.setCoche(false);
         }
         return clienteRepository.save(cliente);
@@ -73,6 +73,11 @@ public class ClienteService {
     }
 
     public Page<Object[]> getPageObject(Pageable pageable) {
+        return clienteRepository.getPageObject(pageable);
+    }
+
+    public Page<Object[]> getPageObjectBoolean(Boolean tieneCoche, Pageable pageable) {
+        // Completar...
         return clienteRepository.getPageObject(pageable);
     }
 
